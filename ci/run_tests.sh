@@ -30,12 +30,6 @@ function test_all {
 	test_result=$a
 }
 
-fold_start "get.cov" "get coverage tools"
-go get golang.org/x/tools/cmd/cover
-go get github.com/mattn/goveralls
-go get github.com/axw/gocov/gocov
-fold_end "get.cov"
-
 echo "mode: count" > coverage.cov
 
 ret=0

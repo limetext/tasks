@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "$(dirname -- "$0")/setup.sh"
+
 if [ "$TRAVIS_OS_NAME" == "linux" ]; then
 
 	# make sure we're up to date
@@ -25,3 +27,13 @@ else
 	exit 1
 
 fi
+
+fold_start "git.submodule_recursive" "git submodule recursive update"
+git submodule update --init --recursive
+fold_end "git.submodule_recursive"
+
+fold_start "go.get_cov" "go get coverage tools"
+go get golang.org/x/tools/cmd/cover
+go get github.com/mattn/goveralls
+go get github.com/axw/gocov/gocov
+fold_end "go.get_cov"
