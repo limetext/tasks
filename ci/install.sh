@@ -37,3 +37,7 @@ go get golang.org/x/tools/cmd/cover
 go get github.com/mattn/goveralls
 go get github.com/axw/gocov/gocov
 fold_end "go.get_cov"
+
+fold_start "go.get_depends" "go get dependencies"
+go get "$1/..."
+fold_end "go.get_depends"
