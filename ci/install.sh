@@ -41,7 +41,6 @@ go get github.com/Masterminds/glide
 fold_end "go.get_glide"
 
 fold_start "go.get_cov" "go get coverage tools"
-go get golang.org/x/tools/cmd/cover
 go get github.com/mattn/goveralls
 go get github.com/axw/gocov/gocov
 fold_end "go.get_cov"
