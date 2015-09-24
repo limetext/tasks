@@ -4,13 +4,18 @@ source "$(dirname -- "$0")/setup.sh"
 
 if [ "$TRAVIS_OS_NAME" == "linux" ]; then
 
-	# make sure we're up to date
-	sudo apt-get update -qq
+	# Add the following to .travis.yml:
 
-	# install backend dependencies
-	sudo add-apt-repository -y ppa:fkrull/deadsnakes
-	sudo apt-get update -qq
-	sudo apt-get install -qq libonig-dev python3.5 python3.5-dev
+	# sudo: false
+	#
+	# addons:
+	#   apt:
+	#     sources:
+	#       - deadsnakes
+	#     packages:
+	#       - libonig-dev
+	#       - python3.5
+	#       - python3.5-dev
 
 elif [ "$TRAVIS_OS_NAME" == "osx" ]; then
 
