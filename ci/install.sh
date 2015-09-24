@@ -10,13 +10,13 @@ if [ "$TRAVIS_OS_NAME" == "linux" ]; then
 	# install backend dependencies
 	sudo add-apt-repository -y ppa:fkrull/deadsnakes
 	sudo apt-get update -qq
-	sudo apt-get install -qq libonig-dev python3.4 python3.4-dev
+	sudo apt-get install -qq libonig-dev python3.5 python3.5-dev
 
 elif [ "$TRAVIS_OS_NAME" == "osx" ]; then
 
 	brew update
 	brew install oniguruma python3
-	ln -s "$(brew --prefix python3)/Frameworks/Python.framework/Versions/3.4/lib/pkgconfig/"* "$(brew --prefix)/lib/pkgconfig"
+	ln -s "$(brew --prefix python3)/Frameworks/Python.framework/Versions/3.5/lib/pkgconfig/"* "$(brew --prefix)/lib/pkgconfig"
 
 else
 
