@@ -4,6 +4,8 @@ source "$(dirname -- "$0")/setup.sh"
 
 if [ "$TRAVIS_OS_NAME" == "linux" ]; then
 
+	echo "Package installs configured in .travis.yml"
+
 	# Add the following to .travis.yml:
 
 	# sudo: false
