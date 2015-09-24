@@ -47,7 +47,5 @@ fold_end "go.get_cov"
 
 fold_start "go.get_depends" "go get dependencies"
 go get github.com/limetext/rubex  # for oniguruma.pc
-pushd "$1"
 glide install
-popd
 fold_end "go.get_depends"
