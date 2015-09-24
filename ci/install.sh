@@ -7,9 +7,6 @@ if [ "$TRAVIS_OS_NAME" == "linux" ]; then
 	# make sure we're up to date
 	sudo apt-get update -qq
 
-	# install go get dependencies
-	sudo apt-get install -qq mercurial
-
 	# install backend dependencies
 	sudo add-apt-repository -y ppa:fkrull/deadsnakes
 	sudo apt-get update -qq
