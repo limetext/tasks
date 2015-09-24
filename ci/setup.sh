@@ -2,7 +2,7 @@
 
 # Just so that our oniguruma.pc is found if
 # the user doesn't have an oniguruma.pc.
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$GOPATH/src/github.com/limetext/rubex
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PWD/vendor/github.com/limetext/rubex:$GOPATH/src/github.com/limetext/rubex
 
 # Colors.
 export RED="\e[31m"
