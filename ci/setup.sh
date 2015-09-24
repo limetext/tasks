@@ -10,6 +10,8 @@ export GREEN="\e[32m"
 export YELLOW="\e[33m"
 export RESET="\e[0m"
 
+export GO15VENDOREXPERIMENT=1
+
 function fold_start {
 	if [ "$TRAVIS" == "true" ]; then
 		echo -en "travis_fold:start:$1\r"

@@ -19,7 +19,7 @@ function run_tests {
 
 function test_all {
 	let a=0
-	for pkg in $(go list "./$1/..."); do
+	for pkg in $(cd $1 && glide novendor); do
 		run_tests "$pkg"
 		let a=$a+$test_result
 		if [ "$test_result" == "0" ]; then
