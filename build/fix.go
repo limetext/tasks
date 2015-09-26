@@ -27,6 +27,8 @@ func patch(path string, fi os.FileInfo, err error) error {
 		switch filepath.Base(path) {
 		case "testdata":
 			return filepath.SkipDir
+		case "vendor":
+			return filepath.SkipDir
 		case "packages":
 			if !strings.Contains(path, "lib/") {
 				return filepath.SkipDir
