@@ -33,18 +33,23 @@ else
 fi
 
 fold_start "git.submodule_recursive" "git submodule recursive update"
+
 git submodule update --init --recursive
+
 fold_end "git.submodule_recursive"
 
-fold_start "go.get_glide" "go get glide"
-go get github.com/Masterminds/glide
-fold_end "go.get_glide"
-
 fold_start "go.get_cov" "go get coverage tools"
+
 go get github.com/mattn/goveralls
 go get github.com/axw/gocov/gocov
+
 fold_end "go.get_cov"
 
 fold_start "go.get_depends" "go get dependencies"
-glide install
+
+go get "$1/..."
+
+# Repeat the get to work around golang/go#12573.
+go get -u "$1/..."
+
 fold_end "go.get_depends"
