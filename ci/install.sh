@@ -23,7 +23,6 @@ elif [ "$TRAVIS_OS_NAME" == "osx" ]; then
 
 	brew update
 	brew install oniguruma python3
-	ln -s "$(brew --prefix python3)/Frameworks/Python.framework/Versions/3.5/lib/pkgconfig/"* "$(brew --prefix)/lib/pkgconfig"
 
 else
 
