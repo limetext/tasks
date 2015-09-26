@@ -32,12 +32,6 @@ else
 
 fi
 
-fold_start "git.submodule_recursive" "git submodule recursive update"
-
-git submodule update --init --recursive
-
-fold_end "git.submodule_recursive"
-
 fold_start "go.get_cov" "go get coverage tools"
 
 go get github.com/mattn/goveralls
