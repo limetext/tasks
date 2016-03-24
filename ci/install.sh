@@ -46,5 +46,4 @@ fold_end "go.get_cov"
 
 fold_start "go.get_depends" "go get dependencies"
 glide install
-rm glide.lock
 fold_end "go.get_depends"
