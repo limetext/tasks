@@ -39,7 +39,7 @@ test_all "$1"
 let ret=$ret+$test_result
 fold_end "test"
 
-if [ "$ret" == "0" ] && [ "$TRAVIS_OS_NAME" == "linux" ]; then
+if [ "$ret" == "0" ] && [ "$REPORT_COVERAGE" == "true" ]; then
 	fold_start "coveralls" "post to coveralls"
 	"$(go env GOPATH | awk 'BEGIN{FS=":"} {print $1}')/bin/goveralls" -coverprofile=coverage.cov -service=travis-ci
 	fold_end "coveralls"
